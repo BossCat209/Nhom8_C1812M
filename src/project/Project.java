@@ -5,6 +5,9 @@
  */
 package project;
 
+import java.sql.Connection;
+import services.ConnectDB;
+
 /**
  *
  * @author huanh
@@ -16,6 +19,12 @@ public class Project {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Connection conn = ConnectDB.getConnection();
+        if (conn != null) {
+            System.out.println("Connect");
+        }else{
+            System.err.println("Error");
+        }
     }
     
 }
