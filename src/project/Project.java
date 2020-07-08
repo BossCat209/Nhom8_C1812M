@@ -6,6 +6,8 @@
 package project;
 
 import java.sql.Connection;
+import java.util.Calendar;
+import java.util.Date;
 import services.ConnectDB;
 
 /**
@@ -19,12 +21,15 @@ public class Project {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Connection conn = ConnectDB.getConnection();
-        if (conn != null) {
-            System.out.println("Connect");
-        }else{
-            System.err.println("Error");
-        }
+//        Connection conn = ConnectDB.getConnection();
+//        if (conn != null) {
+//            System.out.println("Connect");
+//        }else{
+//            System.err.println("Error");
+//        }
+        Calendar cl = Calendar.getInstance();
+        Date date = cl.getTime();
+        System.out.println("Time" + date);
     }
     
 }
