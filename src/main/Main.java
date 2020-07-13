@@ -5,6 +5,8 @@
  */
 package main;
 
+import view.MainJForm;
+
 /**
  *
  * @author huanh
@@ -15,6 +17,6 @@ public class Main {
      * @param args
      */
     public static void main(String[] args) {
-        
+        new MainJForm().setVisible(true);
     }
 }
