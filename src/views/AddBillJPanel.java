@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package views;
 
 /**
  *
  * @author huanh
  */
-public class BrandJPanel extends javax.swing.JPanel {
+public class AddBillJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form BrandJPanel
+     * Creates new form AddBillJPanel
      */
-    public BrandJPanel() {
+    public AddBillJPanel() {
         initComponents();
     }
 

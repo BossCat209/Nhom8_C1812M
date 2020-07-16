@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package controllers;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -12,14 +12,14 @@ import java.awt.event.MouseListener;
 import java.util.List;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import model.Category;
-import view.AddBillJPanel;
-import view.BrandJPanel;
-import view.ColorJPanel;
-import view.OutBillJPanel;
-import view.ProductJPanel;
-import view.SizeJPanel;
-import view.UserJPanel;
+import models.components.view.Category;
+import views.AddBillJPanel;
+import views.BrandJPanel;
+import views.ColorJPanel;
+import views.OutBillJPanel;
+import views.ProductJPanel;
+import views.SizeJPanel;
+import views.UserJPanel;
 
 /**
  *

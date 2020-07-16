@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 
-package view;
+package views;
 
-import controller.SwitchScreen;
+import controllers.ConnectionController;
+import controllers.SwitchScreen;
 import java.util.ArrayList;
 import java.util.List;
-import model.Category;
+import models.components.view.Category;
 
 /**
  *
@@ -20,6 +21,8 @@ public class MainJForm extends javax.swing.JFrame {
     /** Creates new form MainJForm */
     public MainJForm() {
         initComponents();
+        
+        this.jTestConn.setText(ConnectionController.testConnect());
         
         setTitle("Quản lí kho hàng");
         
@@ -67,7 +70,7 @@ public class MainJForm extends javax.swing.JFrame {
         jlbColor = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jTestConn = new javax.swing.JLabel();
         jpnView = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -107,7 +110,7 @@ public class MainJForm extends javax.swing.JFrame {
         jlbProduct.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jlbProduct.setForeground(new java.awt.Color(0, 0, 0));
         jlbProduct.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file/product.png"))); // NOI18N
+        jlbProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/product.png"))); // NOI18N
         jlbProduct.setText("Quản lí sản phẩm");
 
         javax.swing.GroupLayout jpnProductLayout = new javax.swing.GroupLayout(jpnProduct);
@@ -133,7 +136,7 @@ public class MainJForm extends javax.swing.JFrame {
         jlbAdmin.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jlbAdmin.setForeground(new java.awt.Color(0, 0, 0));
         jlbAdmin.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file/icon_user.png"))); // NOI18N
+        jlbAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/icon_user.png"))); // NOI18N
         jlbAdmin.setText("Quản lí admin");
 
         javax.swing.GroupLayout jpnAdminLayout = new javax.swing.GroupLayout(jpnAdmin);
@@ -159,7 +162,7 @@ public class MainJForm extends javax.swing.JFrame {
         jlbAddBill.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jlbAddBill.setForeground(new java.awt.Color(0, 0, 0));
         jlbAddBill.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbAddBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file/add_bill.png"))); // NOI18N
+        jlbAddBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/add_bill.png"))); // NOI18N
         jlbAddBill.setText("Quản lí danh sách nhập kho");
 
         javax.swing.GroupLayout jpnAddBillLayout = new javax.swing.GroupLayout(jpnAddBill);
@@ -185,7 +188,7 @@ public class MainJForm extends javax.swing.JFrame {
         jlbOutBill.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jlbOutBill.setForeground(new java.awt.Color(0, 0, 0));
         jlbOutBill.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbOutBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file/out_bill.png"))); // NOI18N
+        jlbOutBill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/out_bill.png"))); // NOI18N
         jlbOutBill.setText("Quản lí danh sách xuất kho");
 
         javax.swing.GroupLayout jpnOutBillLayout = new javax.swing.GroupLayout(jpnOutBill);
@@ -211,7 +214,7 @@ public class MainJForm extends javax.swing.JFrame {
         jlbBrand.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jlbBrand.setForeground(new java.awt.Color(0, 0, 0));
         jlbBrand.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbBrand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file/relasionship.png"))); // NOI18N
+        jlbBrand.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/relasionship.png"))); // NOI18N
         jlbBrand.setText("Danh sách hãng liên kết");
 
         javax.swing.GroupLayout jpnBrandLayout = new javax.swing.GroupLayout(jpnBrand);
@@ -237,7 +240,7 @@ public class MainJForm extends javax.swing.JFrame {
         jlbSize.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jlbSize.setForeground(new java.awt.Color(0, 0, 0));
         jlbSize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbSize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file/size.png"))); // NOI18N
+        jlbSize.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/size.png"))); // NOI18N
         jlbSize.setText("Danh sách số size");
 
         javax.swing.GroupLayout jpnSizeLayout = new javax.swing.GroupLayout(jpnSize);
@@ -263,7 +266,7 @@ public class MainJForm extends javax.swing.JFrame {
         jlbColor.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jlbColor.setForeground(new java.awt.Color(0, 0, 0));
         jlbColor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbColor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/file/color.png"))); // NOI18N
+        jlbColor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/color.png"))); // NOI18N
         jlbColor.setText("Danh sách màu");
 
         javax.swing.GroupLayout jpnColorLayout = new javax.swing.GroupLayout(jpnColor);
@@ -288,8 +291,8 @@ public class MainJForm extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Tình trạng kết nối:");
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel10.setText("Connencting...");
+        jTestConn.setForeground(new java.awt.Color(0, 0, 0));
+        jTestConn.setText("Connencting...");
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -299,7 +302,7 @@ public class MainJForm extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTestConn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel12Layout.setVerticalGroup(
@@ -308,7 +311,7 @@ public class MainJForm extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel10))
+                    .addComponent(jTestConn))
                 .addContainerGap())
         );
 
@@ -328,9 +331,7 @@ public class MainJForm extends javax.swing.JFrame {
                     .addComponent(jpnProduct, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
                     .addComponent(jpnAdmin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(34, Short.MAX_VALUE))
-            .addGroup(jpnMenuLayout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jpnMenuLayout.setVerticalGroup(
             jpnMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -382,7 +383,7 @@ public class MainJForm extends javax.swing.JFrame {
         jpnIndexLayout.setVerticalGroup(
             jpnIndexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jpnIndexLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnIndexLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -439,10 +440,10 @@ public class MainJForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel jTestConn;
     private javax.swing.JLabel jlbAddBill;
     private javax.swing.JLabel jlbAdmin;
     private javax.swing.JLabel jlbBrand;

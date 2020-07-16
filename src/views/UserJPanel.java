@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package views;
 
 /**
  *
  * @author huanh
  */
-public class ColorJPanel extends javax.swing.JPanel {
+public class UserJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ColorJPanel
+     * Creates new form UserJPanel
      */
-    public ColorJPanel() {
+    public UserJPanel() {
         initComponents();
     }
 

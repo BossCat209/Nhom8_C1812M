@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package models.components.database;
 
 import java.sql.Date;
 
@@ -11,12 +11,9 @@ import java.sql.Date;
  *
  * @author huanh
  */
-public class Brand {
+public class Size {
     private int id;
-    private String name;
-    private String email;
-    private int phone;
-    private String address;
+    private String name_size;
     private Date created_at;
     private Date updated_at;
 
@@ -28,36 +25,12 @@ public class Brand {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getName_size() {
+        return name_size;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getPhone() {
-        return phone;
-    }
-
-    public void setPhone(int phone) {
-        this.phone = phone;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setName_size(String name_size) {
+        this.name_size = name_size;
     }
 
     public Date getCreated_at() {
@@ -75,6 +48,4 @@ public class Brand {
     public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
     }
-    
-    
 }

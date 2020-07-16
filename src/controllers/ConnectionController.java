@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controller;
+package controllers;
 
 import java.sql.Connection;
 import services.ConnectDB;
@@ -12,10 +12,9 @@ import services.ConnectDB;
  *
  * @author huanh
  */
-public class Connect {
+public class ConnectionController {
     public static Connection conn = null;
-    public static String testConnect(){
-        conn = ConnectDB.getConnection();
+    public static String testConnect() {
         try {
             conn = ConnectDB.getConnection();
             return "Thành công";
@@ -23,4 +22,5 @@ public class Connect {
             return "Thất bại";
         }
     }
+    
 }

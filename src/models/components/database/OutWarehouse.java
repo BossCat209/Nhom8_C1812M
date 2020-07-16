@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package models.components.database;
 
 import java.sql.Date;
 
@@ -11,11 +11,11 @@ import java.sql.Date;
  *
  * @author huanh
  */
-public class AddWarehouse {
+public class OutWarehouse {
     private int id;
-    private String name;
-    private String link;
-    private int id_user_add;
+    private String name_out;
+    private String link_out;
+    private int id_user_out;
     private Date created_at;
     private Date updated_at;
 
@@ -27,28 +27,28 @@ public class AddWarehouse {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getName_out() {
+        return name_out;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName_out(String name_out) {
+        this.name_out = name_out;
     }
 
-    public String getLink() {
-        return link;
+    public String getLink_out() {
+        return link_out;
     }
 
-    public void setLink(String link) {
-        this.link = link;
+    public void setLink_out(String link_out) {
+        this.link_out = link_out;
     }
 
-    public int getId_user_add() {
-        return id_user_add;
+    public int getId_user_out() {
+        return id_user_out;
     }
 
-    public void setId_user_add(int id_user_add) {
-        this.id_user_add = id_user_add;
+    public void setId_user_out(int id_user_out) {
+        this.id_user_out = id_user_out;
     }
 
     public Date getCreated_at() {

@@ -3,20 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package models.components.database;
 
-import java.io.Serializable;
 import java.sql.Date;
 
 /**
  *
  * @author huanh
  */
-public class User implements Serializable{
+public class User {
     private int id;
-    private String name;
+    private String name_user;
+    private int phone_user;
     private String password;
-    private int phone;
     private Date created_at;
     private Date updated_at;
 
@@ -28,12 +27,20 @@ public class User implements Serializable{
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getName_user() {
+        return name_user;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName_user(String name_user) {
+        this.name_user = name_user;
+    }
+
+    public int getPhone_user() {
+        return phone_user;
+    }
+
+    public void setPhone_user(int phone_user) {
+        this.phone_user = phone_user;
     }
 
     public String getPassword() {
@@ -42,14 +49,6 @@ public class User implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public int getPhone() {
-        return phone;
-    }
-
-    public void setPhone(int phone) {
-        this.phone = phone;
     }
 
     public Date getCreated_at() {
@@ -67,5 +66,4 @@ public class User implements Serializable{
     public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
     }
-    
 }

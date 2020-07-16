@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package daos;
 
-import views.MainJForm;
+import java.util.List;
+import models.components.database.Product;
+//import models.User;
 
 /**
  *
  * @author huanh
  */
-public class Main {
-     /**
+public interface ProductDao {
+
+    /**
      *
-     * @param args
+     * @return
      */
-    public static void main(String[] args) {
-        new MainJForm().setVisible(true);
-    }
+    public List<Product> getList();
 }

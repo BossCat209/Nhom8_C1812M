@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package models.components.view;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -48,6 +48,4 @@ public class Category {
     public void setJlabel(JLabel jlabel) {
         this.jlabel = jlabel;
     }
-    
-    
 }

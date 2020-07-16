@@ -3,20 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main;
+package services;
 
-import views.MainJForm;
+import java.util.List;
+import models.components.database.Product;
 
 /**
  *
  * @author huanh
  */
-public class Main {
-     /**
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        new MainJForm().setVisible(true);
-    }
+public interface ProductService {
+    public List<Product> getList();
 }
