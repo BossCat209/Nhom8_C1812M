@@ -7,11 +7,14 @@ package services;
 
 import java.util.List;
 import models.components.database.Product;
+import models.components.view.ListProduct;
 
 /**
  *
  * @author huanh
  */
 public interface ProductService {
-    public List<Product> getList();
+    public List<ListProduct> getList();
+    
+    public int createOrUpdate(Product product);
 }

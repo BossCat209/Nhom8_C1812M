@@ -27,7 +27,7 @@ public class MainJForm extends javax.swing.JFrame {
         setTitle("Quản lí kho hàng");
         
         SwitchScreen screen = new SwitchScreen(jpnView);
-        screen.setView(jpnProduct, jlbProduct);
+//        screen.setView(jpnProduct, jlbProduct);
         
         List<Category> listCate = new ArrayList<>();
         listCate.add(new Category("Product", jpnProduct, jlbProduct));

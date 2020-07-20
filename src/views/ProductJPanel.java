@@ -5,7 +5,7 @@
  */
 package views;
 
-import controllers.ProductController;
+import controllers.ListProductController;
 
 /**
  *
@@ -19,8 +19,11 @@ public class ProductJPanel extends javax.swing.JPanel {
     public ProductJPanel() {
         initComponents();
         
-        ProductController controller = new ProductController(jpnView, jbnAdd, jtfSearch);
+//        jbnAdd.add(new ProductJFrame());
+        
+        ListProductController controller = new ListProductController(jpnView, jbnAdd, jtfSearch);
         controller.setDataTable();
+//        controller.setAdd();
     }
 
     /**

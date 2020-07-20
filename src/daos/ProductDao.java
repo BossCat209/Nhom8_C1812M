@@ -7,6 +7,7 @@ package daos;
 
 import java.util.List;
 import models.components.database.Product;
+import models.components.view.ListProduct;
 //import models.User;
 
 /**
@@ -15,9 +16,8 @@ import models.components.database.Product;
  */
 public interface ProductDao {
 
-    /**
-     *
-     * @return
-     */
-    public List<Product> getList();
+    
+    public List<ListProduct> getList();
+    
+    public int createOrUpdate(Product product);
 }

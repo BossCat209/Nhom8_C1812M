@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import models.components.database.Product;
+import models.components.view.ListProduct;
 import services.ConnectDB;
 import services.HandlingProductService;
 
@@ -21,33 +22,34 @@ import services.HandlingProductService;
  *
  * @author huanh
  */
-public class HandlingProductDao implements ProductDao{
+public class HandlingProductDao implements ProductDao {
+
+    Connection conn = ConnectDB.getConnection();
 
     @Override
-    public List<Product> getList() {
+    public List<ListProduct> getList() {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        Connection conn = ConnectDB.getConnection();
-        String sql = "SELECT * FROM products";
-//                + "FROM products "
-//                + "INNER JOIN users ON products.id_user_create = users.id "
-//                + "INNER JOIN colors ON products.id_color = colors.id "
-//                + "INNER JOIN sizes ON products.id_size = sizes.id "
-//                + "INNER JOIN brands ON products.id_brand = brands.id";
-        List<Product> list = new ArrayList<>();
+//        Connection conn = ConnectDB.getConnection();
+        String sql = "SELECT products.*, users.name_user, colors.name_color, sizes.name_size, brands.name_brand "
+                + "FROM products "
+                + "INNER JOIN users ON products.id_user_create = users.id "
+                + "INNER JOIN colors ON products.id_color = colors.id "
+                + "INNER JOIN sizes ON products.id_size = sizes.id "
+                + "INNER JOIN brands ON products.id_brand = brands.id";
+        List<ListProduct> list = new ArrayList<>();
         try {
             PreparedStatement ps = conn.prepareCall(sql);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Product product = new Product();
-                product.setId(rs.getInt("id"));
-                product.setName_product(rs.getString("name_product"));
-                product.setId_user_create(rs.getInt("id_user_create"));
-                product.setId_color(rs.getInt("id_color"));
-                product.setId_size(rs.getInt("id_size"));
-                product.setId_brand(rs.getInt("id_brand"));
+                ListProduct listPro = new ListProduct();
+                listPro.setName_product(rs.getString("name_product"));
+                listPro.setName_user(rs.getString("name_user"));
+                listPro.setSize(rs.getString("name_size"));
+                listPro.setColor(rs.getString("name_color"));
+                listPro.setBrand(rs.getString("name_brand"));
 //                product.setCreated_at(rs.getDate("created_at"));
 //                product.setUpdated_at(rs.getDate("updated_at"));
-                list.add(product);
+                list.add(listPro);
             }
             ps.close();
             conn.close();
@@ -56,5 +58,33 @@ public class HandlingProductDao implements ProductDao{
         }
         return list;
     }
-    
+
+    @Override
+    public int createOrUpdate(Product product) {
+        try {
+            //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            //        Connection conn = ConnectDB.getConnection();
+            String sql = "INSERT INTO products(name_product, id_user_create, id_color, id_size, id_brand) VALUES(?, ?, ?, ?, ?)";
+            PreparedStatement ps = conn.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            ps.setString(1, product.getName_product());
+            ps.setInt(2, product.getId_user_create());
+            ps.setInt(3, product.getId_color());
+            ps.setInt(4, product.getId_size());
+            ps.setInt(5, product.getId_brand());
+//            ps.setDate(6, product.getCreated_at());
+//            ps.setDate(7, product.getUpdated_at());
+            ps.execute();
+            ResultSet rs = ps.getGeneratedKeys();
+            int generatedKey = 0;
+            if (rs.next()) {
+                generatedKey = rs.getInt(1);
+            }
+            ps.close();
+            conn.close();
+            return generatedKey;
+        } catch (SQLException ex) {
+            Logger.getLogger(HandlingProductDao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return 0;                                                                       
+    }
 }

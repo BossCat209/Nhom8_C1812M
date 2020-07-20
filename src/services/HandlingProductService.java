@@ -9,6 +9,7 @@ import daos.HandlingProductDao;
 import daos.ProductDao;
 import java.util.List;
 import models.components.database.Product;
+import models.components.view.ListProduct;
 
 /**
  *
@@ -23,9 +24,14 @@ public class HandlingProductService implements ProductService{
     }
 
     @Override
-    public List<Product> getList() {
+    public List<ListProduct> getList() {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         return productDao.getList();
     }
-    
+
+    @Override
+    public int createOrUpdate(Product product) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return productDao.createOrUpdate(product);
+    }
 }
